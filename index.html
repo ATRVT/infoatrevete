@@ -128,7 +128,7 @@
         </p>
       </div>
 
-      <!-- Diapositiva 1: Concepto TEA (Textos ampliados a text-base) -->
+      <!-- Diapositiva 1: Concepto TEA -->
       <div id="slide-1" class="slide-content hidden flex-1 flex-col justify-between py-2">
         <div class="space-y-4">
           <div class="flex items-center gap-2">
@@ -158,7 +158,7 @@
         </div>
       </div>
 
-      <!-- Diapositiva 2: Filosofía / ¿Qué soñamos? (Textos ampliados a text-base) -->
+      <!-- Diapositiva 2: Filosofía / ¿Qué soñamos? -->
       <div id="slide-2" class="slide-content hidden flex-1 flex-col justify-between py-2">
         <div class="space-y-4">
           <div class="flex items-center gap-2">
@@ -190,7 +190,7 @@
         </div>
       </div>
 
-      <!-- Diapositiva 3: Modalidades (Textos y horas más grandes) -->
+      <!-- Diapositiva 3: Modalidades (Diseño optimizado: Nombre y horas juntos, sin redundancia) -->
       <div id="slide-3" class="slide-content hidden flex-1 flex-col justify-between py-2">
         <div class="space-y-4">
           <div class="flex items-center gap-2">
@@ -215,42 +215,45 @@
           <!-- Contenido Morning -->
           <div id="schedule-morning" class="space-y-3">
             <!-- Caminar -->
-            <div class="bg-white p-4.5 rounded-2xl border-l-4 border-l-brand-green shadow-sm flex items-center justify-between">
-              <span class="inline-block px-4 py-2 rounded-xl text-sm font-black text-white uppercase tracking-wider bg-brand-green">
-                Caminar
-              </span>
-              <div class="text-right">
-                <p class="text-2xl font-black text-brand-green">32 h <span class="text-xs font-normal text-gray-500">/ mes</span></p>
-                <p class="text-xs text-gray-400 font-medium flex items-center justify-end gap-1 mt-0.5">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  8h semanales
-                </p>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4">
+              <div class="w-3.5 h-3.5 rounded-full bg-brand-green shrink-0"></div>
+              <div class="flex flex-col items-start">
+                <span class="text-base font-black text-brand-darkBlue tracking-wide uppercase">Caminar</span>
+                <div class="flex items-baseline gap-1.5 mt-0.5">
+                  <span class="text-lg font-bold text-brand-green">32 h <span class="text-xs font-normal text-gray-500">/ mes</span></span>
+                  <span class="text-xs text-gray-400 font-normal flex items-center gap-0.5">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    (8h/sem)
+                  </span>
+                </div>
               </div>
             </div>
             <!-- Correr -->
-            <div class="bg-white p-4.5 rounded-2xl border-l-4 border-l-brand-yellow shadow-sm flex items-center justify-between">
-              <span class="inline-block px-4 py-2 rounded-xl text-sm font-black text-white uppercase tracking-wider bg-brand-yellow">
-                Correr
-              </span>
-              <div class="text-right">
-                <p class="text-2xl font-black text-brand-yellow">48 h <span class="text-xs font-normal text-gray-500">/ mes</span></p>
-                <p class="text-xs text-gray-400 font-medium flex items-center justify-end gap-1 mt-0.5">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  12h semanales
-                </p>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4">
+              <div class="w-3.5 h-3.5 rounded-full bg-brand-yellow shrink-0"></div>
+              <div class="flex flex-col items-start">
+                <span class="text-base font-black text-brand-darkBlue tracking-wide uppercase">Correr</span>
+                <div class="flex items-baseline gap-1.5 mt-0.5">
+                  <span class="text-lg font-bold text-brand-yellow">48 h <span class="text-xs font-normal text-gray-500">/ mes</span></span>
+                  <span class="text-xs text-gray-400 font-normal flex items-center gap-0.5">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    (12h/sem)
+                  </span>
+                </div>
               </div>
             </div>
             <!-- Volar -->
-            <div class="bg-white p-4.5 rounded-2xl border-l-4 border-l-brand-red shadow-sm flex items-center justify-between">
-              <span class="inline-block px-4 py-2 rounded-xl text-sm font-black text-white uppercase tracking-wider bg-brand-red">
-                Volar
-              </span>
-              <div class="text-right">
-                <p class="text-2xl font-black text-brand-red">80 h <span class="text-xs font-normal text-gray-500">/ mes</span></p>
-                <p class="text-xs text-gray-400 font-medium flex items-center justify-end gap-1 mt-0.5">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  20h semanales
-                </p>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4">
+              <div class="w-3.5 h-3.5 rounded-full bg-brand-red shrink-0"></div>
+              <div class="flex flex-col items-start">
+                <span class="text-base font-black text-brand-darkBlue tracking-wide uppercase">Volar</span>
+                <div class="flex items-baseline gap-1.5 mt-0.5">
+                  <span class="text-lg font-bold text-brand-red">80 h <span class="text-xs font-normal text-gray-500">/ mes</span></span>
+                  <span class="text-xs text-gray-400 font-normal flex items-center gap-0.5">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    (20h/sem)
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -258,49 +261,52 @@
           <!-- Contenido Tarde -->
           <div id="schedule-afternoon" class="space-y-3 hidden">
             <!-- Caminar -->
-            <div class="bg-white p-4.5 rounded-2xl border-l-4 border-l-brand-green shadow-sm flex items-center justify-between">
-              <span class="inline-block px-4 py-2 rounded-xl text-sm font-black text-white uppercase tracking-wider bg-brand-green">
-                Caminar
-              </span>
-              <div class="text-right">
-                <p class="text-2xl font-black text-brand-green">24 h <span class="text-xs font-normal text-gray-500">/ mes</span></p>
-                <p class="text-xs text-gray-400 font-medium flex items-center justify-end gap-1 mt-0.5">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  6h semanales
-                </p>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4">
+              <div class="w-3.5 h-3.5 rounded-full bg-brand-green shrink-0"></div>
+              <div class="flex flex-col items-start">
+                <span class="text-base font-black text-brand-darkBlue tracking-wide uppercase">Caminar</span>
+                <div class="flex items-baseline gap-1.5 mt-0.5">
+                  <span class="text-lg font-bold text-brand-green">24 h <span class="text-xs font-normal text-gray-500">/ mes</span></span>
+                  <span class="text-xs text-gray-400 font-normal flex items-center gap-0.5">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    (6h/sem)
+                  </span>
+                </div>
               </div>
             </div>
             <!-- Saltar -->
-            <div class="bg-white p-4.5 rounded-2xl border-l-4 border-l-brand-purple shadow-sm flex items-center justify-between">
-              <span class="inline-block px-4 py-2 rounded-xl text-sm font-black text-white uppercase tracking-wider bg-brand-purple">
-                Saltar
-              </span>
-              <div class="text-right">
-                <p class="text-2xl font-black text-brand-purple">36 h <span class="text-xs font-normal text-gray-500">/ mes</span></p>
-                <p class="text-xs text-gray-400 font-medium flex items-center justify-end gap-1 mt-0.5">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  9h semanales
-                </p>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4">
+              <div class="w-3.5 h-3.5 rounded-full bg-brand-purple shrink-0"></div>
+              <div class="flex flex-col items-start">
+                <span class="text-base font-black text-brand-darkBlue tracking-wide uppercase">Saltar</span>
+                <div class="flex items-baseline gap-1.5 mt-0.5">
+                  <span class="text-lg font-bold text-brand-purple">36 h <span class="text-xs font-normal text-gray-500">/ mes</span></span>
+                  <span class="text-xs text-gray-400 font-normal flex items-center gap-0.5">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    (9h/sem)
+                  </span>
+                </div>
               </div>
             </div>
             <!-- Correr -->
-            <div class="bg-white p-4.5 rounded-2xl border-l-4 border-l-brand-yellow shadow-sm flex items-center justify-between">
-              <span class="inline-block px-4 py-2 rounded-xl text-sm font-black text-white uppercase tracking-wider bg-brand-yellow">
-                Correr
-              </span>
-              <div class="text-right">
-                <p class="text-2xl font-black text-brand-yellow">48 h <span class="text-xs font-normal text-gray-500">/ mes</span></p>
-                <p class="text-xs text-gray-400 font-medium flex items-center justify-end gap-1 mt-0.5">
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  12h semanales
-                </p>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4">
+              <div class="w-3.5 h-3.5 rounded-full bg-brand-yellow shrink-0"></div>
+              <div class="flex flex-col items-start">
+                <span class="text-base font-black text-brand-darkBlue tracking-wide uppercase">Correr</span>
+                <div class="flex items-baseline gap-1.5 mt-0.5">
+                  <span class="text-lg font-bold text-brand-yellow">48 h <span class="text-xs font-normal text-gray-500">/ mes</span></span>
+                  <span class="text-xs text-gray-400 font-normal flex items-center gap-0.5">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    (12h/sem)
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Diapositiva 4: Servicios Incluidos (Textos y títulos más grandes) -->
+      <!-- Diapositiva 4: Servicios Incluidos -->
       <div id="slide-4" class="slide-content hidden flex-1 flex-col justify-between py-2">
         <div class="space-y-3">
           <div class="flex items-center gap-2">
@@ -318,7 +324,7 @@
         </div>
       </div>
 
-      <!-- Diapositiva 5: Evaluaciones (Textos de etapas más grandes) -->
+      <!-- Diapositiva 5: Evaluaciones -->
       <div id="slide-5" class="slide-content hidden flex-1 flex-col justify-between py-2">
         <div class="space-y-3">
           <div class="flex items-center gap-2">
@@ -385,7 +391,7 @@
         </div>
       </div>
 
-      <!-- Diapositiva 6: Agendar (Botones grandes y fáciles de pulsar) -->
+      <!-- Diapositiva 6: Agendar -->
       <div id="slide-6" class="slide-content hidden flex-1 flex-col justify-between py-2">
         <div class="space-y-6 flex flex-col justify-between h-full">
           <div class="space-y-4 text-center">
@@ -638,11 +644,28 @@
       if (currentSlide === 1) btnText = "Ver filosofía";
       else if (currentSlide === 2) btnText = "Ver modalidades";
       else if (currentSlide === 3) btnText = "Ver servicios";
-      else if (currentSlide === 4) btnText = "Ver evaluaciones";
-      else if (currentSlide === 5) btnText = "Agendar reunión";
-      else if (currentSlide === 6) btnText = "Volver al inicio";
+      else if (currentSlide === 4) btnText = "Ver servicios"; // (Slide 4 is services)
+      else if (currentSlide === 5) btnText = "Ver evaluaciones";
+      else if (currentSlide === 6) btnText = "Agendar reunión";
 
-      btnAction.querySelector('span').textContent = btnText;
+      // Wait, let's fix the step texts in javascript:
+      // Slide indices:
+      // 0: Portada
+      // 1: Autismo
+      // 2: Filosofía
+      // 3: Modalidades
+      // 4: Servicios
+      // 5: Evaluaciones
+      // 6: Agendar
+      let actionBtnText = "Comenzar";
+      if (currentSlide === 1) actionBtnText = "Ver filosofía";
+      else if (currentSlide === 2) actionBtnText = "Ver modalidades";
+      else if (currentSlide === 3) actionBtnText = "Ver servicios";
+      else if (currentSlide === 4) actionBtnText = "Ver evaluaciones";
+      else if (currentSlide === 5) actionBtnText = "Agendar reunión";
+      else if (currentSlide === 6) actionBtnText = "Volver al inicio";
+
+      btnAction.querySelector('span').textContent = actionBtnText;
 
       // Ocultar icono de flecha si es la última slide
       if (currentSlide === 6) {
