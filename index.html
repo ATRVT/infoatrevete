@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Atrévete - Fundación Waybi</title>
   
   <!-- Google Font: Outfit -->
@@ -38,6 +38,7 @@
     body {
       font-family: 'Outfit', sans-serif;
       -webkit-tap-highlight-color: transparent;
+      touch-action: pan-y;
     }
     
     /* Scrollbar personalizado para las listas colapsables */
@@ -55,13 +56,13 @@
     /* Animación de entrada de diapositivas */
     .slide-active {
       display: flex !important;
-      animation: slideFadeIn 0.3s ease-out forwards;
+      animation: slideFadeIn 0.25s ease-out forwards;
     }
     
     @keyframes slideFadeIn {
       from {
         opacity: 0;
-        transform: translateX(15px);
+        transform: translateX(10px);
       }
       to {
         opacity: 1;
@@ -69,20 +70,19 @@
       }
     }
 
-    /* Ocultar botones de desplazamiento en navegadores viejos */
     .no-select {
       -webkit-user-select: none;
       user-select: none;
     }
   </style>
 </head>
-<body class="bg-brand-bg min-h-screen flex flex-col items-center justify-center px-4 py-8 antialiased no-select">
+<body class="bg-brand-bg min-h-screen flex flex-col items-center justify-center sm:p-4 p-0 antialiased no-select overflow-hidden">
 
-  <!-- Caja del celular simulada (Optimizado para verse en celulares a pantalla completa y centrado en computadoras) -->
-  <div class="w-full max-w-[400px] h-[720px] bg-[#FAFBFD] rounded-[40px] shadow-2xl border-[10px] border-brand-darkBlue/15 overflow-hidden flex flex-col relative">
+  <!-- Caja del celular (En móviles es 100% de la pantalla, en computadoras tiene marco simulado) -->
+  <div class="w-full h-[100dvh] sm:h-[720px] sm:max-w-[400px] bg-[#FAFBFD] sm:rounded-[40px] sm:shadow-2xl sm:border-[10px] sm:border-brand-darkBlue/15 overflow-hidden flex flex-col relative">
     
-    <!-- Barra superior de estado móvil simulada -->
-    <div class="h-10 bg-brand-darkBlue/5 px-6 flex justify-between items-center text-[10px] text-gray-500 font-semibold border-b border-slate-100 shrink-0">
+    <!-- Barra superior de estado móvil simulada (SOLO SE MUESTRA EN COMPUTADORAS) -->
+    <div class="h-10 bg-brand-darkBlue/5 px-6 flex justify-between items-center text-[10px] text-gray-500 font-semibold border-b border-slate-100 shrink-0 hidden sm:flex">
       <span>Waybi Info</span>
       <div class="flex items-center gap-1">
         <span>ATRÉVETE</span>
@@ -98,12 +98,12 @@
     </div>
 
     <!-- Contenedor del contenido deslizable -->
-    <div class="flex-1 p-6 overflow-y-auto relative flex flex-col" id="content-container">
+    <div class="flex-1 p-5 sm:p-6 overflow-y-auto relative flex flex-col" id="content-container">
       
       <!-- Diapositiva 0: Portada -->
-      <div id="slide-0" class="slide-content hidden flex-1 flex-col justify-center items-center text-center py-6">
+      <div id="slide-0" class="slide-content hidden flex-1 flex-col justify-center items-center text-center py-4">
         <!-- SVG Vector Logo Waybi Atrévete -->
-        <svg class="w-52 h-52 drop-shadow-sm mb-2" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="w-48 h-48 drop-shadow-sm mb-2" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M25 55 L100 20 L175 55" stroke="#b1cbf6" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" />
           <circle cx="50" cy="74" r="10" fill="#59CEC3" />
           <circle cx="82" cy="58" r="13" fill="#b1cbf6" />
@@ -118,13 +118,13 @@
         </svg>
         
         <div class="space-y-4">
-          <h1 class="text-4.5xl font-black text-brand-darkBlue tracking-tight">ATRÉVETE</h1>
-          <div class="relative inline-block px-6 py-2.5 bg-brand-yellow text-white rounded-2xl transform -rotate-1 font-bold text-lg shadow-md">
+          <h1 class="text-4xl font-black text-brand-darkBlue tracking-tight">ATRÉVETE</h1>
+          <div class="relative inline-block px-6 py-2 bg-brand-yellow text-white rounded-2xl transform -rotate-1 font-bold text-base shadow-md">
             SE VALE SOÑAR
           </div>
         </div>
         
-        <p class="text-xs text-gray-400 italic mt-8">
+        <p class="text-xs text-gray-400 italic mt-6">
           Desliza hacia la izquierda o presiona "Comenzar"
         </p>
       </div>
@@ -133,15 +133,15 @@
       <div id="slide-1" class="slide-content hidden flex-1 flex-col justify-between py-2">
         <div class="space-y-4">
           <div class="flex items-center gap-2">
-            <span class="w-2 h-8 bg-brand-green rounded-full"></span>
-            <h2 class="text-2xl font-bold text-brand-darkBlue">El Autismo</h2>
+            <span class="w-2 h-7 bg-brand-green rounded-full"></span>
+            <h2 class="text-xl font-bold text-brand-darkBlue">El Autismo</h2>
           </div>
           
-          <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 space-y-4">
+          <div class="bg-white rounded-3xl p-5 shadow-sm border border-slate-100 space-y-4">
             <div class="flex items-start gap-3">
-              <div class="p-2 rounded-xl bg-brand-green/10 text-brand-green mt-1 shrink-0">
+              <div class="p-2 rounded-xl bg-brand-green/10 text-brand-green mt-0.5 shrink-0">
                 <!-- Heart Icon -->
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                 </svg>
               </div>
@@ -163,8 +163,8 @@
       <div id="slide-2" class="slide-content hidden flex-1 flex-col justify-between py-2">
         <div class="space-y-4">
           <div class="flex items-center gap-2">
-            <span class="w-2 h-8 bg-brand-purple rounded-full"></span>
-            <h2 class="text-2xl font-bold text-brand-darkBlue">¿Qué soñamos?</h2>
+            <span class="w-2 h-7 bg-brand-purple rounded-full"></span>
+            <h2 class="text-xl font-bold text-brand-darkBlue">¿Qué soñamos?</h2>
           </div>
           
           <div class="bg-white rounded-3xl p-5 shadow-sm border border-slate-100 space-y-4">
@@ -176,10 +176,10 @@
             </p>
           </div>
 
-          <div class="bg-brand-green/5 rounded-3xl p-5 border border-brand-green/10 space-y-2">
-            <h3 class="text-xs font-bold text-brand-darkBlue uppercase tracking-wider flex items-center gap-2">
+          <div class="bg-brand-green/5 rounded-3xl p-5 border border-brand-green/10 space-y-1.5">
+            <h3 class="text-xs font-bold text-brand-darkBlue uppercase tracking-wider flex items-center gap-1.5">
               <!-- Sparkles icon -->
-              <svg class="w-4 h-4 text-brand-yellow" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <svg class="w-3.5 h-3.5 text-brand-yellow" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
               </svg>
               Enfoque
@@ -195,8 +195,8 @@
       <div id="slide-3" class="slide-content hidden flex-1 flex-col justify-between py-2">
         <div class="space-y-4">
           <div class="flex items-center gap-2">
-            <span class="w-2 h-8 bg-brand-yellow rounded-full"></span>
-            <h2 class="text-2xl font-bold text-brand-darkBlue">Modalidades</h2>
+            <span class="w-2 h-7 bg-brand-yellow rounded-full"></span>
+            <h2 class="text-xl font-bold text-brand-darkBlue">Modalidades</h2>
           </div>
           
           <p class="text-xs text-gray-500 leading-relaxed">
@@ -204,7 +204,7 @@
           </p>
 
           <!-- Selector de franja horaria -->
-          <div class="flex bg-gray-100 p-1.5 rounded-2xl">
+          <div class="flex bg-gray-100 p-1.5 rounded-2xl shrink-0">
             <button id="btn-morning" onclick="switchSchedule('mañana')" class="flex-1 text-center py-2.5 rounded-xl font-bold text-xs transition-all cursor-pointer bg-brand-darkBlue text-white shadow-sm">
               Mañana (8am - 12pm)
             </button>
@@ -214,14 +214,14 @@
           </div>
 
           <!-- Contenido Morning -->
-          <div id="schedule-morning" class="space-y-3">
+          <div id="schedule-morning" class="space-y-2.5">
             <!-- Caminar -->
-            <div class="bg-white p-4.5 rounded-2xl border-l-4 border-l-brand-green shadow-sm flex items-center justify-between">
-              <span class="inline-block px-3.5 py-1.5 rounded-xl text-xs font-black text-white uppercase tracking-wider bg-brand-green">
+            <div class="bg-white p-4 rounded-2xl border-l-4 border-l-brand-green shadow-sm flex items-center justify-between">
+              <span class="inline-block px-3 py-1 rounded-xl text-xs font-black text-white uppercase tracking-wider bg-brand-green">
                 Caminar
               </span>
               <div class="text-right">
-                <p class="text-xl font-black text-brand-green">32 h <span class="text-xs font-normal text-gray-500">/ mes</span></p>
+                <p class="text-lg font-black text-brand-green">32 h <span class="text-xs font-normal text-gray-500">/ mes</span></p>
                 <p class="text-[10px] text-gray-400 font-medium flex items-center justify-end gap-1 mt-0.5">
                   <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                   8h semanales
@@ -229,12 +229,12 @@
               </div>
             </div>
             <!-- Correr -->
-            <div class="bg-white p-4.5 rounded-2xl border-l-4 border-l-brand-yellow shadow-sm flex items-center justify-between">
-              <span class="inline-block px-3.5 py-1.5 rounded-xl text-xs font-black text-white uppercase tracking-wider bg-brand-yellow">
+            <div class="bg-white p-4 rounded-2xl border-l-4 border-l-brand-yellow shadow-sm flex items-center justify-between">
+              <span class="inline-block px-3 py-1 rounded-xl text-xs font-black text-white uppercase tracking-wider bg-brand-yellow">
                 Correr
               </span>
               <div class="text-right">
-                <p class="text-xl font-black text-brand-yellow">48 h <span className="text-xs font-normal text-gray-500">/ mes</span></p>
+                <p class="text-lg font-black text-brand-yellow">48 h <span class="text-xs font-normal text-gray-500">/ mes</span></p>
                 <p class="text-[10px] text-gray-400 font-medium flex items-center justify-end gap-1 mt-0.5">
                   <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                   12h semanales
@@ -242,12 +242,12 @@
               </div>
             </div>
             <!-- Volar -->
-            <div class="bg-white p-4.5 rounded-2xl border-l-4 border-l-brand-red shadow-sm flex items-center justify-between">
-              <span class="inline-block px-3.5 py-1.5 rounded-xl text-xs font-black text-white uppercase tracking-wider bg-brand-red">
+            <div class="bg-white p-4 rounded-2xl border-l-4 border-l-brand-red shadow-sm flex items-center justify-between">
+              <span class="inline-block px-3 py-1 rounded-xl text-xs font-black text-white uppercase tracking-wider bg-brand-red">
                 Volar
               </span>
               <div class="text-right">
-                <p class="text-xl font-black text-brand-red">80 h <span className="text-xs font-normal text-gray-500">/ mes</span></p>
+                <p class="text-lg font-black text-brand-red">80 h <span class="text-xs font-normal text-gray-500">/ mes</span></p>
                 <p class="text-[10px] text-gray-400 font-medium flex items-center justify-end gap-1 mt-0.5">
                   <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                   20h semanales
@@ -257,14 +257,14 @@
           </div>
 
           <!-- Contenido Tarde -->
-          <div id="schedule-afternoon" class="space-y-3 hidden">
+          <div id="schedule-afternoon" class="space-y-2.5 hidden">
             <!-- Caminar -->
-            <div class="bg-white p-4.5 rounded-2xl border-l-4 border-l-brand-green shadow-sm flex items-center justify-between">
-              <span class="inline-block px-3.5 py-1.5 rounded-xl text-xs font-black text-white uppercase tracking-wider bg-brand-green">
+            <div class="bg-white p-4 rounded-2xl border-l-4 border-l-brand-green shadow-sm flex items-center justify-between">
+              <span class="inline-block px-3 py-1 rounded-xl text-xs font-black text-white uppercase tracking-wider bg-brand-green">
                 Caminar
               </span>
               <div class="text-right">
-                <p class="text-xl font-black text-brand-green">24 h <span class="text-xs font-normal text-gray-500">/ mes</span></p>
+                <p class="text-lg font-black text-brand-green">24 h <span class="text-xs font-normal text-gray-500">/ mes</span></p>
                 <p class="text-[10px] text-gray-400 font-medium flex items-center justify-end gap-1 mt-0.5">
                   <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                   6h semanales
@@ -272,12 +272,12 @@
               </div>
             </div>
             <!-- Saltar -->
-            <div class="bg-white p-4.5 rounded-2xl border-l-4 border-l-brand-purple shadow-sm flex items-center justify-between">
-              <span class="inline-block px-3.5 py-1.5 rounded-xl text-xs font-black text-white uppercase tracking-wider bg-brand-purple">
+            <div class="bg-white p-4 rounded-2xl border-l-4 border-l-brand-purple shadow-sm flex items-center justify-between">
+              <span class="inline-block px-3 py-1 rounded-xl text-xs font-black text-white uppercase tracking-wider bg-brand-purple">
                 Saltar
               </span>
               <div class="text-right">
-                <p class="text-xl font-black text-brand-purple">36 h <span class="text-xs font-normal text-gray-500">/ mes</span></p>
+                <p class="text-lg font-black text-brand-purple">36 h <span class="text-xs font-normal text-gray-500">/ mes</span></p>
                 <p class="text-[10px] text-gray-400 font-medium flex items-center justify-end gap-1 mt-0.5">
                   <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                   9h semanales
@@ -285,12 +285,12 @@
               </div>
             </div>
             <!-- Correr -->
-            <div class="bg-white p-4.5 rounded-2xl border-l-4 border-l-brand-yellow shadow-sm flex items-center justify-between">
-              <span class="inline-block px-3.5 py-1.5 rounded-xl text-xs font-black text-white uppercase tracking-wider bg-brand-yellow">
+            <div class="bg-white p-4 rounded-2xl border-l-4 border-l-brand-yellow shadow-sm flex items-center justify-between">
+              <span class="inline-block px-3 py-1 rounded-xl text-xs font-black text-white uppercase tracking-wider bg-brand-yellow">
                 Correr
               </span>
               <div class="text-right">
-                <p class="text-xl font-black text-brand-yellow">48 h <span class="text-xs font-normal text-gray-500">/ mes</span></p>
+                <p class="text-lg font-black text-brand-yellow">48 h <span class="text-xs font-normal text-gray-500">/ mes</span></p>
                 <p class="text-[10px] text-gray-400 font-medium flex items-center justify-end gap-1 mt-0.5">
                   <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                   12h semanales
@@ -305,7 +305,7 @@
       <div id="slide-4" class="slide-content hidden flex-1 flex-col justify-between py-2">
         <div class="space-y-3">
           <div class="flex items-center gap-2">
-            <span class="w-2 h-8 bg-brand-green rounded-full"></span>
+            <span class="w-2 h-7 bg-brand-green rounded-full"></span>
             <h2 class="text-2xl font-bold text-brand-darkBlue">Servicios Incluidos</h2>
           </div>
           
@@ -313,54 +313,54 @@
             Todos nuestros planes incorporan servicios integrales para garantizar un desarrollo continuo del niño y soporte para la familia:
           </p>
 
-          <div class="grid grid-cols-1 gap-2 max-h-[350px] overflow-y-auto pr-1 custom-scroll" id="services-accordion-list">
-            <!-- Cargado dinámicamente con JS para mantenerlo limpio -->
+          <div class="grid grid-cols-1 gap-2 max-h-[360px] overflow-y-auto pr-1 custom-scroll" id="services-accordion-list">
+            <!-- Cargado dinámicamente con JS -->
           </div>
         </div>
       </div>
 
       <!-- Diapositiva 5: Evaluaciones -->
       <div id="slide-5" class="slide-content hidden flex-1 flex-col justify-between py-2">
-        <div class="space-y-4">
+        <div class="space-y-3">
           <div class="flex items-center gap-2">
-            <span class="w-2 h-8 bg-brand-purple rounded-full"></span>
-            <h2 class="text-2xl font-bold text-brand-darkBlue">Evaluaciones</h2>
+            <span class="w-2 h-7 bg-brand-purple rounded-full"></span>
+            <h2 class="text-xl font-bold text-brand-darkBlue">Evaluaciones</h2>
           </div>
           
           <p class="text-xs text-gray-500 leading-relaxed">
             Realizamos evaluaciones funcionales y diagnósticas con profesionales certificados mediante un proceso de 5 etapas:
           </p>
 
-          <div class="space-y-2.5 max-h-[320px] overflow-y-auto pr-1 custom-scroll">
-            <div class="bg-white p-3.5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-3">
+          <div class="space-y-2.5 max-h-[330px] overflow-y-auto pr-1 custom-scroll">
+            <div class="bg-white p-3.5 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-3">
               <div class="w-6 h-6 rounded-full bg-brand-purple/15 text-brand-purple font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</div>
               <div class="space-y-1">
                 <h4 class="text-xs font-bold text-brand-darkBlue">Herramientas estandarizadas</h4>
                 <p class="text-[11px] text-gray-600 leading-relaxed">Pruebas diagnósticas y funcionales (ADOS-2, ADI-R, etc.) seleccionadas según la evaluación.</p>
               </div>
             </div>
-            <div class="bg-white p-3.5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-3">
+            <div class="bg-white p-3.5 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-3">
               <div class="w-6 h-6 rounded-full bg-brand-purple/15 text-brand-purple font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</div>
               <div class="space-y-1">
                 <h4 class="text-xs font-bold text-brand-darkBlue">Entrevistas con la familia</h4>
                 <p class="text-[11px] text-gray-600 leading-relaxed">Identificamos necesidades y dificultades para trazar objetivos de aprendizaje adaptados.</p>
               </div>
             </div>
-            <div class="bg-white p-3.5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-3">
+            <div class="bg-white p-3.5 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-3">
               <div class="w-6 h-6 rounded-full bg-brand-purple/15 text-brand-purple font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</div>
               <div class="space-y-1">
                 <h4 class="text-xs font-bold text-brand-darkBlue">Observación natural</h4>
                 <p class="text-[11px] text-gray-600 leading-relaxed">Se determina y realiza durante las sesiones de ser necesario.</p>
               </div>
             </div>
-            <div class="bg-white p-3.5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-3">
+            <div class="bg-white p-3.5 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-3">
               <div class="w-6 h-6 rounded-full bg-brand-purple/15 text-brand-purple font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</div>
               <div class="space-y-1">
                 <h4 class="text-xs font-bold text-brand-darkBlue">Sesiones individuales</h4>
                 <p class="text-[11px] text-gray-600 leading-relaxed">Sesiones de 1h a 1h 15min. La primera con padres y luego a solas con el terapeuta.</p>
               </div>
             </div>
-            <div class="bg-white p-3.5 rounded-2xl border border-gray-100 shadow-sm flex items-start gap-3">
+            <div class="bg-white p-3.5 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-3">
               <div class="w-6 h-6 rounded-full bg-brand-purple/15 text-brand-purple font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">5</div>
               <div class="space-y-1">
                 <h4 class="text-xs font-bold text-brand-darkBlue">Entrega de informe clínico</h4>
@@ -468,8 +468,8 @@
 
   </div>
 
-  <!-- Info footer externa -->
-  <div class="text-center mt-6 space-y-1">
+  <!-- Info footer externa (SOLO COMPUTADORAS) -->
+  <div class="text-center mt-6 space-y-1 hidden sm:block">
     <p class="text-xs text-gray-500 font-semibold">
       © <span id="current-year"></span> Fundación Waybi • Programa Atrévete
     </p>
@@ -658,6 +658,16 @@
       document.getElementById('content-container').scrollTop = 0;
     }
 
+    // Navegación con deslizar dedo (Swipe) sin rebote de página entera
+    document.addEventListener('touchmove', function(e) {
+      if (e.target.closest('#content-container, .custom-scroll')) {
+        // Permitir scroll normal dentro de las listas de texto
+        return;
+      }
+      // Evitar rebote del navegador en Safari
+      e.preventDefault();
+    }, { passive: false });
+
     function nextSlide() {
       if (currentSlide < totalSlides - 1) {
         currentSlide++;
@@ -674,6 +684,7 @@
       }
     }
 
+    // Ir a Diapositiva
     function goToSlide(index) {
       currentSlide = index;
       updateSlideVisibility();
